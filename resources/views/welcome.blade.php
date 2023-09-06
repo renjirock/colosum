@@ -7,7 +7,7 @@
     <meta name="description"
         content="Our e-commerce platform is designed for businesses to manage their sales, inventory, and social media presence all in one place. With our platform, you can turn your social networks into an online store and never miss a sale again. Our artificial intelligence technology also helps improve customer service and increase your sales. Say goodbye to the hassle of managing multiple platforms and hello to a streamlined, efficient way of selling online. Join us today and revolutionize the way you sell online!" />
     <meta name="author" content="Colosum" />
-    <title>Colosum - e-commerce for social networks</title>
+    <title>Colosum - e-commerce for social media</title>
     <meta name="keywords"
         content="e-commerce platform, businesses, sales, inventory, social media, online store, artificial intelligence, customer service, sales increase, streamlined, efficient, selling online." />
     <meta name="copyright" content="Colosum" />

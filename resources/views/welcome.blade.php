@@ -7,7 +7,7 @@
     <meta name="description"
         content="Our e-commerce platform is designed for businesses to manage their sales, inventory, and social media presence all in one place. With our platform, you can turn your social networks into an online store and never miss a sale again. Our artificial intelligence technology also helps improve customer service and increase your sales. Say goodbye to the hassle of managing multiple platforms and hello to a streamlined, efficient way of selling online. Join us today and revolutionize the way you sell online!" />
     <meta name="author" content="Colosum" />
-    <title>Colosum - e-commerce for social media</title>
+    <title>Colosum - e-commerce for social networks</title>
     <meta name="keywords"
         content="e-commerce platform, businesses, sales, inventory, social media, online store, artificial intelligence, customer service, sales increase, streamlined, efficient, selling online." />
     <meta name="copyright" content="Colosum" />
@@ -26,9 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,400&amp;display=swap"
         rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -78,7 +76,7 @@
                 </div>
                 <div class="col-lg-6">
                     <!-- Masthead device mockup feature-->
-                    <div class="masthead-device-mockup" data-aos="fade-left">
+                    <div class="masthead-device-mockup">
                         <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="circleGradient" gradientTransform="rotate(45)">
@@ -118,7 +116,7 @@
             </div>
         </div>
     </aside> --}}
-    <section class="cta" data-aos="fade-top">
+    <section class="cta">
         <div class="cta-content">
             <div class="container px-5">
                 <p class="text-white lead fw-normal mb-5 mb-lg-0">
@@ -137,7 +135,7 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center">
                 <div class="col-lg-8 order-lg-1 mb-5 mb-lg-0">
-                    <div class="container-fluid px-5"  data-aos="fade-left">
+                    <div class="container-fluid px-5">
                         <div class="row gx-5">
                             <div class="col-md-6 mb-5">
                                 <!-- Feature item-->
@@ -183,7 +181,7 @@
                 </div>
                 <div class="col-lg-4 order-lg-0">
                     <!-- Features section device mockup-->
-                    <div class="features-device-mockup"  data-aos="fade-right">
+                    <div class="features-device-mockup">
                         <svg class="circle" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="circleGradient" gradientTransform="rotate(45)">
@@ -301,14 +299,9 @@
         </div>
     @endif
     <!-- Bootstrap core JS-->
-    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts.js') }}"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
-
-<script>
-    AOS.init();
-</script>
 
 </html>

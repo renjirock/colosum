@@ -4831,6 +4831,14 @@ textarea.form-control-lg {
   counter-increment: section;
 }
 
+.float-alert{
+	position:fixed;
+	bottom:40px;
+	right:40px;
+    z-index: 1000;
+	box-shadow: 2px 2px 3px #999;
+}
+
 .list-group-item-action {
   width: 100%;
   color: var(--bs-list-group-action-color);

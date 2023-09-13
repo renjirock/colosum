@@ -7,7 +7,7 @@
     <meta name="description"
         content="Our e-commerce platform is designed for businesses to manage their sales, inventory, and social media presence all in one place. With our platform, you can turn your social networks into an online store and never miss a sale again. Our artificial intelligence technology also helps improve customer service and increase your sales. Say goodbye to the hassle of managing multiple platforms and hello to a streamlined, efficient way of selling online. Join us today and revolutionize the way you sell online!" />
     <meta name="author" content="Colosum" />
-    <title>Colosum - e-commerce for social networks</title>
+    <title>Colosum | e-commerce for social networks</title>
     <meta name="keywords"
         content="e-commerce platform, businesses, sales, inventory, social media, online store, artificial intelligence, customer service, sales increase, streamlined, efficient, selling online." />
     <meta name="copyright" content="Colosum" />
@@ -27,6 +27,7 @@
         rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
+    @livewireStyles
 </head>
 
 <body id="page-top">
@@ -44,17 +45,19 @@
                 <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                     <li class="nav-item"><a class="nav-link me-lg-3" href="#features">Features</a></li>
                     <li class="nav-item"><a class="nav-link me-lg-3" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a href="{{ route('login') }}"
+                            class="btn btn-outline-dark rounded-pill px-3 ms-1 me-1 mb-2 mb-lg-0">
+                            <span class="d-flex align-items-center">
+                                <span class="small">Login</span>
+                            </span>
+                        </a></li>
+                    <li class="nav-item"><a href="{{ route('register') }}"
+                            class="btn btn-primary rounded-pill px-3 ms-1 me-1 mb-2 mb-lg-0">
+                            <span class="d-flex align-items-center">
+                                <span class="small">Sign up</span>
+                            </span>
+                        </a></li>
                 </ul>
-                <!-- <a href="{% url 'login' %}" class="btn btn-outline-dark rounded-pill px-3 ms-1 me-1 mb-2 mb-lg-0">
-                        <span class="d-flex align-items-center">
-                            <span class="small">Login</span>
-                        </span>
-                    </a>
-                    <a href="{% url 'register' %}" class="btn btn-primary rounded-pill px-3 ms-1 me-1 mb-2 mb-lg-0">
-                        <span class="d-flex align-items-center">
-                            <span class="small">Sign up</span>
-                        </span>
-                    </a> -->
             </div>
         </div>
     </nav>
@@ -68,10 +71,12 @@
                         <h1 class="display-3 text-gradient  lh-1 mb-3">the first e-coomerce for social media.</h1>
                         <p class="lead fw-normal text-muted mb-5">Increase your sales and keep better control of your
                             business with our free 24/7 chatbot!</p>
-                        <!-- <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                                <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="{% url 'register' %}">Sign up</a>
-                                <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="{% url 'login' %}">Login</a>
-                            </div> -->
+                        <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                            <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder"
+                                href="{{ route('register') }}">Sign up</a>
+                            <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder"
+                                href="{{ route('login') }}">Login</a>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6">
@@ -102,20 +107,6 @@
             </div>
         </div>
     </header>
-    {{-- <aside class="text-center bg-gradient-primary-to-secondary">
-        <div class="container px-5">
-            <div class="row gx-5 justify-content-center">
-                <div class="col-xl-8">
-                    <div class="h2 fs-1 text-white mb-4">Welcome to our e-commerce platform, designed specifically for
-                        businesses looking to manage their sales, inventory, and social media presence all in one place.
-                        With our platform, you can turn your social networks into an online store and never miss a sale
-                        again. Our artificial intelligence technology also helps improve customer service and increase
-                        your sales. Say goodbye to the hassle of managing multiple platforms and hello to a streamlined,
-                        efficient way of selling online. Join us today and revolutionize the way you sell online!</div>
-                </div>
-            </div>
-        </div>
-    </aside> --}}
     <section class="cta">
         <div class="cta-content">
             <div class="container px-5">
@@ -302,6 +293,7 @@
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
     <!-- Core theme JS-->
     <script src="{{ asset('js/scripts.js') }}"></script>
+    @livewireScripts
 </body>
 
 </html>

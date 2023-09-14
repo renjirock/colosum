@@ -2,17 +2,24 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Brand;
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use Livewire\WithFileUploads;
 use Illuminate\Support\Facades\Storage;
+use App\Models\Categorie;
+use App\Models\Size;
 
 class EditProducts extends Component
 {
     use WithFileUploads;
 
-    public $title, $SKU, $description, $price, $qty, $is_active, $image, $imageLoad, $product;
+    public $title, $SKU, $description, $price, $qty, $is_active, $image, $imageLoad, $product, $categories, $category, $have_sizes, $have_brands;
+
+    public $xs, $s, $m, $l, $xl, $xxl;
+
+    public $brand;
 
     public $rules = [
         'title'         => 'required',
@@ -40,9 +47,40 @@ class EditProducts extends Component
         $this->product->price = $this->price;
         $this->product->qty = $this->qty;
         $this->product->is_active = $this->is_active == 1 ? true : false;
+        $this->product->have_sizes = $this->have_sizes == 1 ? true : false;
+        $this->product->have_brands = $this->have_brands == 1 ? true : false;
         $this->product->image = $path;
+        $this->product->category_id = $this->category;
 
         if ($this->product->save()) {
+            if ($this->have_sizes) {
+                Size::where('product_id', $this->product->id)->delete();
+                if ($this->xs) {
+                    $this->createSize('xs', $this->product->id);
+                }
+                if ($this->s) {
+                    $this->createSize('s', $this->product->id);
+                }
+                if ($this->m) {
+                    $this->createSize('m', $this->product->id);
+                }
+                if ($this->l) {
+                    $this->createSize('l', $this->product->id);
+                }
+                if ($this->xl) {
+                    $this->createSize('xl', $this->product->id);
+                }
+                if ($this->xxl) {
+                    $this->createSize('xxl', $this->product->id);
+                }
+            }
+            if ($this->have_brands) {
+                Brand::where('product_id', $this->product->id)->delete();
+                Brand::create([
+                    'name' => $this->brand,
+                    'product_id' => $this->product->id
+                ]);
+            }
             return redirect('admin/products')->with('success', 'Product update successfully!');
         }
     }
@@ -58,6 +96,30 @@ class EditProducts extends Component
         $this->qty = $product->qty;
         $this->is_active = $product->is_active;
         $this->imageLoad = $product->image;
+        $this->category = $product->category_id;
+        $categories = Categorie::where('user_id', Auth::id())
+                                ->where('is_active', true)
+                                ->get();
+        $this->categories = $categories;
+        $this->have_sizes = $product->have_sizes;
+        $this->have_brands = $product->have_brands;
+        if ($this->have_sizes) {
+            $sizes = Size::where('product_id', $product_id)->get();
+            foreach ($sizes as $size) {
+                match ($size->name) {
+                    'xs' => $this->xs = 1,
+                    's' => $this->s = 1,
+                    'm' => $this->m = 1,
+                    'l' => $this->l = 1,
+                    'xl' => $this->xl = 1,
+                    'xxl' => $this->xxl = 1,
+                };
+            }
+        }
+        if ($this->have_brands) {
+            $brand = Brand::where('product_id', $product_id)->first();
+            $this->brand = $brand->name;
+        }
     }
 
     public function render()
@@ -65,5 +127,12 @@ class EditProducts extends Component
 
         // $this->image = $product->image;
         return view('livewire.edit-products');
+    }
+
+    private function createSize($name, $id){
+        Size::create([
+            'name' => $name,
+            'product_id' => $id
+        ]);
     }
 }

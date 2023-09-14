@@ -24,6 +24,9 @@ return new class extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->nullable();
             $table->string('image')->nullable();
+            $table->boolean('have_sizes')->nullable();
+            $table->boolean('have_colors')->nullable();
+            $table->boolean('have_brands')->nullable();
             $table->timestamps();
         });
     }

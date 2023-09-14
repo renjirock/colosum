@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'admin'], function() {
     Route::group(['prefix'=>'categories'], function() {
         Route::get('/', [CategoriesController::class, 'index'])->name('admin.categories.index');
         Route::get('/create', [CategoriesController::class, 'create'])->name('admin.categories.create');
+        Route::get('/edit/{id}', [CategoriesController::class, 'edit'])->name('admin.categories.edit');
     });
 });
 
@@ -68,4 +69,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 Route::get('/item/{store}/{item}', [ItemController::class, 'index'])->name('item');
 
-Route::get('/store/{store}', [StoreController::class, 'index'])->name('item');
+Route::get('/store/{store}', [StoreController::class, 'index'])->name('store');

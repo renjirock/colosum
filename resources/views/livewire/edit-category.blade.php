@@ -5,7 +5,7 @@
             <label for="name" class="form-label">Nombre</label>
             <input type="text" wire:model='name' class="form-control" id="name" name="name" placeholder=""
                 value="" required />
-            @error('name')
+            @error('title')
                 <span class="text-danger">
                     {{ $message }}
                 </span>
@@ -16,6 +16,7 @@
             <input type="checkbox" wire:model='is_active' class="form-check-input" id="isActive" name="isActive">
             <label class="form-check-label" for="isActive">Activo</label>
         </div>
+
         <hr class="my-4" />
 
         <button class="w-100 btn btn-primary btn-lg" wire:click='save' wire:loading.remove wire:target='save, image'

@@ -10,7 +10,6 @@
                 <th scope="col">Active</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
-                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -22,10 +21,7 @@
                     @else
                         <td class="text-danger"><i class="fa-solid fa-x"></i></td>
                     @endif
-                    <td>
-                        <a href="{{ route('admin.products.edit', $category->id) }}"><i class="fa-regular fa-eye"></i></a>
-                    </td>
-                    <td><a href="{{ route('admin.products.edit', $category->id) }}"><i
+                    <td><a href="{{ route('admin.categories.edit', $category->id) }}"><i
                                 class="fa-regular fa-pen-to-square"></i></a></td>
                     <td>
                         @livewire('delete-product', ['product' => $category->id], key($category->id))

@@ -19,13 +19,13 @@ class CreateCategories extends Component
     {
         $this->validate();
 
-        $product = Categorie::create([
+        $category = Categorie::create([
             'name' => $this->name,
             'is_active' => $this->is_active == 1 ? true : false,
             'user_id' => Auth::id()
         ]);
 
-        if ($product) {
+        if ($category) {
             return redirect('admin/categories')->with('success', 'Category create successfully!');
         }
     }

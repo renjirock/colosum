@@ -15,6 +15,6 @@ class CategoriesController extends Controller
     }
 
     public function edit(Request $request, string $id){
-        return view('admin.products.edit', compact('id'));
+        return view('admin.categories.edit', compact('id'));
     }
 }

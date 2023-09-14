@@ -55,6 +55,30 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-clipboard-list"></i></div>
                                 Categorias
                             </a>
+                            <a class="nav-link" id="categories" href="{{route('admin.categories.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-cart-plus"></i></i></div>
+                                Ventas
+                            </a>
+                            <a class="nav-link" id="categories" href="{{route('admin.categories.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></i></div>
+                                Envios
+                            </a>
+                            <a class="nav-link" id="categories" href="{{route('admin.categories.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tags"></i></i></div>
+                                Descuentos
+                            </a>
+                            <a class="nav-link" id="categories" href="{{route('admin.categories.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-shop"></i></i></div>
+                                Tienda
+                            </a>
+                            <a class="nav-link" id="categories" href="{{route('admin.categories.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-comments"></i></i></div>
+                                Chats
+                            </a>
+                            <a class="nav-link" id="categories" href="{{route('admin.categories.index')}}">
+                                <div class="sb-nav-link-icon"><i class="fas fa-money-bill-wave"></i></i></i></div>
+                                Pagos
+                            </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

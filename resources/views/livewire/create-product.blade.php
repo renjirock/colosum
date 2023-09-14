@@ -52,8 +52,11 @@
 
         <div class="col-md-5">
             <label for="category" class="form-label">Categorias</label>
-            <select class="form-select" id="category" name="category">
+            <select class="form-select" wire:model='category' id="category" name="category">
                 <option value="">Selecciona una...</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                @endforeach
             </select>
             @error('category')
                 <span class="text-danger">
@@ -61,6 +64,53 @@
                 </span>
             @enderror
         </div>
+
+        <div class="col-12">
+            <input type="checkbox" wire:model='have_sizes' class="form-check-input" id="haveSizes" name="haveSizes">
+            <label class="form-check-label" for="haveSizes">¿Tiene tallas?</label>
+        </div>
+
+        @if ($have_sizes)
+            <div class="col m-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" wire:model='xs' type="checkbox" id="xs">
+                    <label class="form-check-label" for="xs">XS</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" wire:model='s' type="checkbox" id="s">
+                    <label class="form-check-label" for="s">S</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" wire:model='m' type="checkbox" id="m">
+                    <label class="form-check-label" for="m">M</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" wire:model='l' type="checkbox" id="l">
+                    <label class="form-check-label" for="l">L</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" wire:model='xl' type="checkbox" id="xl">
+                    <label class="form-check-label" for="xl">XL</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" wire:model='xxl' type="checkbox" id="xxl">
+                    <label class="form-check-label" for="xxl">XXL</label>
+                </div>
+            </div>
+        @endif
+
+        <div class="col-12">
+            <input type="checkbox" wire:model='have_brands' class="form-check-input" id="haveBrands" name="haveBrands">
+            <label class="form-check-label" for="haveBrands">¿Tiene marca?</label>
+        </div>
+
+        @if ($have_brands)
+            <div class="col-6 m-3">
+                <label for="name" class="form-label">Marca</label>
+                <input type="text"  class="form-control" wire:model='brand' id="brand" name="brand" placeholder=""
+                    value=""/>
+            </div>
+        @endif
 
         <div class="col-12">
             <label for="description" class="form-label">Descripcion</label>
@@ -88,7 +138,13 @@
         </div>
 
         @if ($image)
-            <img src="{{ $image->temporaryUrl() }}" style="max-height: 200px" class="img-fluid" alt="upload-image">
+            <div class="container mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <img src="{{ $image->temporaryUrl() }}" class="img-fluid" alt="upload-image">
+                    </div>
+                </div>
+            </div>
         @endif
 
         <hr class="my-4" />

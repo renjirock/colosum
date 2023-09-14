@@ -29,7 +29,7 @@
                         <td class="text-danger"><i class="fa-solid fa-x"></i></td>
                     @endif
                     <td>
-                        <a href="{{ route('admin.products.edit', $product->id) }}"><i class="fa-regular fa-eye"></i></a>
+                        <a href="{{ route('item', ['store' => Auth::user()->id, 'item' => $product->id]) }}"><i class="fa-regular fa-eye"></i></a>
                     </td>
                     <td><a href="{{ route('admin.products.edit', $product->id) }}"><i
                                 class="fa-regular fa-pen-to-square"></i></a></td>

@@ -18,16 +18,7 @@
                         <!--<span class="text-decoration-line-through">$45.00</span>-->
                         <span>${{$product->price}}</span>
                     </div>
-                    <form method="POST" action="{% url 'carts:add-to-cart' product.id %}">
-                        <div class="d-flex pb-5">
-                                @csrf
-                                <input class="form-control text-center me-3" id="inputQuantity" name="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                                <button class="btn btn-outline-dark flex-shrink-0" type="submit">
-                                    <i class="bi-cart-fill me-1"></i>
-                                    Add to cart
-                                </button>
-                        </div>
-                    </form>
+                    @livewire('add-to-cart', ['product' => $product->id, 'name' => $product->title, 'price' => $product->price, 'img' => url('storage/' . $product->image)], key($product->id))
                     <p class="lead">{{$product->title}}</p>
                 </div>
             </div>

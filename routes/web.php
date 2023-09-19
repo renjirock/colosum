@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
@@ -70,3 +71,5 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('/item/{store}/{item}', [ItemController::class, 'index'])->name('item');
 
 Route::get('/store/{store}', [StoreController::class, 'index'])->name('store');
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart');

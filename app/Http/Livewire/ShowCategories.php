@@ -18,6 +18,6 @@ class ShowCategories extends Component
             ->where('name', 'like', '%' . $this->search . '%')
             ->orderBy('created_at', 'desc')
             ->paginate(15);
-        return view('livewire.show-categories', compact('categories'));
+        return view('livewire.categories.show-categories', compact('categories'));
     }
 }

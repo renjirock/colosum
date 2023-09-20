@@ -126,7 +126,7 @@ class EditProducts extends Component
     {
 
         // $this->image = $product->image;
-        return view('livewire.edit-products');
+        return view('livewire.products.edit-products');
     }
 
     private function createSize($name, $id){

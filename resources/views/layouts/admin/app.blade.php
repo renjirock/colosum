@@ -63,7 +63,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-truck"></i></i></div>
                                 Envios
                             </a>
-                            <a class="nav-link" id="categories" href="{{route('admin.categories.index')}}">
+                            <a class="nav-link" id="categories" href="{{route('admin.discounts.index')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tags"></i></i></div>
                                 Descuentos
                             </a>

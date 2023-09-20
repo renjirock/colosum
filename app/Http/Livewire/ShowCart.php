@@ -14,6 +14,6 @@ class ShowCart extends Component
     public function render()
     {
         $cart = Cart::session(Session::get('_token'))->getContent();
-        return view('livewire.show-cart', compact('cart'));
+        return view('livewire.cart.show-cart', compact('cart'));
     }
 }

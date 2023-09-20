@@ -25,4 +25,5 @@
         <button class="w-100 btn btn-primary btn-lg" disabled wire:loading wire:target='save, image' type="button">
             Guardando
         </button>
+    </div>
 </form>

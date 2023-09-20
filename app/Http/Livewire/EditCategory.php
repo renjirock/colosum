@@ -37,6 +37,6 @@ class EditCategory extends Component
 
     public function render()
     {
-        return view('livewire.edit-category');
+        return view('livewire.categories.edit-category');
     }
 }

@@ -19,6 +19,6 @@ class ShowProducts extends Component
                     ->orWhere('description', 'like', '%' . $this->search . '%')
                     ->orderBy('created_at', 'desc')
                     ->paginate(15);
-        return view('livewire.show-products', compact('products'));
+        return view('livewire.products.show-products', compact('products'));
     }
 }

@@ -13,9 +13,7 @@ class RemoveCart extends Component
 
     public function remove(){
         Cart::session(Session::get('_token'))->remove($this->item);
-        $this->emitTo('show-cart', 'render');
-        $this->emitTo('cart-count', 'render');
-        $this->emit('succes', 'el producto se elimino correctamente');
+        return redirect('cart')->with('success', 'Item delete successfully!');
     }
 
     public function mount(string $item)
@@ -25,6 +23,6 @@ class RemoveCart extends Component
 
     public function render()
     {
-        return view('livewire.remove-cart');
+        return view('livewire.cart.remove-cart');
     }
 }

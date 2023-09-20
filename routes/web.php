@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoriesController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DiscountsController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -58,6 +59,10 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'admin'], function() {
         Route::get('/', [CategoriesController::class, 'index'])->name('admin.categories.index');
         Route::get('/create', [CategoriesController::class, 'create'])->name('admin.categories.create');
         Route::get('/edit/{id}', [CategoriesController::class, 'edit'])->name('admin.categories.edit');
+    });
+    Route::group(['prefix'=>'discounts'], function() {
+        Route::get('/', [DiscountsController::class, 'index'])->name('admin.discounts.index');
+        Route::get('/create', [DiscountsController::class, 'create'])->name('admin.discounts.create');
     });
 });
 

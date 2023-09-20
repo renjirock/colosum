@@ -14,6 +14,6 @@ class CartCount extends Component
     public function render()
     {
         $count = Carts::session(Session::get('_token'))->getContent()->count();
-        return view('livewire.cart-count', compact('count'));
+        return view('livewire.cart.cart-count', compact('count'));
     }
 }

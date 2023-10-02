@@ -12,27 +12,29 @@
                 <th scope="col">Active</th>
                 <th scope="col"></th>
                 <th scope="col"></th>
-                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($discounts as $discount)
                 <tr>
-                    <td>{{ $discount->title }}</td>
-                    <td>{{ $discount->price }}</td>
-                    <td>{{ $discount->qty }}</td>
+                    <td>{{ $discount->name }}</td>
+                    <td>{{ $discount->code }}</td>
+                    <td>{{ match($discount->type) {
+                        '1' => 'Por categoria porcentaje',
+                        '2' => 'Por categoria valor',
+                        '3' => 'Por porcentaje',
+                        '4' => 'Por valor',
+                        default => '',
+                    } }}</td>
                     @if ($discount->is_active)
                         <td class="text-success"><i class="fa-solid fa-check"></i></td>
                     @else
                         <td class="text-danger"><i class="fa-solid fa-x"></i></td>
                     @endif
-                    <td>
-                        <a href="{{ route('item', ['store' => Auth::user()->id, 'item' => $discount->id]) }}"><i class="fa-regular fa-eye"></i></a>
-                    </td>
-                    <td><a href="{{ route('admin.products.edit', $discount->id) }}"><i
+                    <td><a href="{{ route('admin.discounts.edit', $discount->id) }}"><i
                                 class="fa-regular fa-pen-to-square"></i></a></td>
                     <td>
-                        @livewire('delete-product', ['product' => $discount->id], key($discount->id))
+                        @livewire('delete-discount', ['discount' => $discount->id], key($discount->id))
                     </td>
                 </tr>
             @endforeach

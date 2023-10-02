@@ -10,6 +10,8 @@ class ShowDiscounts extends Component
 {
     public $search;
 
+    protected $listeners = ['render'];
+
     public function render()
     {
         $discounts = Discount::where('user_id', Auth::id())

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('type');
             $table->integer('user_id');
             $table->integer('discount');
+            $table->integer('qty')->nullable();
             $table->boolean('is_active');
             $table->boolean('expiration');
             $table->date('from')->nullable();

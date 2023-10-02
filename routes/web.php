@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth'], 'prefix'=>'admin'], function() {
     Route::group(['prefix'=>'discounts'], function() {
         Route::get('/', [DiscountsController::class, 'index'])->name('admin.discounts.index');
         Route::get('/create', [DiscountsController::class, 'create'])->name('admin.discounts.create');
+        Route::get('/edit/{id}', [DiscountsController::class, 'edit'])->name('admin.discounts.edit');
     });
 });
 

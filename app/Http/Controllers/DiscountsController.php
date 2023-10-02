@@ -56,7 +56,7 @@ class DiscountsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.discounts.edit', compact('id'));
     }
 
     /**

@@ -19,6 +19,6 @@ class ShowDiscounts extends Component
             ->orWhere('code', 'like', '%' . $this->search . '%')
             ->orderBy('created_at', 'desc')
             ->paginate(15);
-        return view('livewire.show-discounts', compact('discounts'));
+        return view('livewire.discounts.show-discounts', compact('discounts'));
     }
 }

@@ -55,6 +55,6 @@ class CreateDiscounts extends Component
 
     public function render()
     {
-        return view('livewire.create-discounts');
+        return view('livewire.discounts.create-discounts');
     }
 }

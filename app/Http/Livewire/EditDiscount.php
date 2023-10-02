@@ -77,6 +77,6 @@ class EditDiscount extends Component
 
     public function render()
     {
-        return view('livewire.edit-discount');
+        return view('livewire.discounts.edit-discount');
     }
 }

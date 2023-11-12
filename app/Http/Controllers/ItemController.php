@@ -11,6 +11,6 @@ class ItemController extends Controller
         $product = Product::where('user_id', $store)
                         ->where('id', $item)
                         ->first();
-        return view('store.item', compact('product'));
+        return view('store.item', compact('product', 'store'));
     }
 }

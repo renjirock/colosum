@@ -67,7 +67,7 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tags"></i></i></div>
                                 Descuentos
                             </a>
-                            <a class="nav-link" id="categories" href="{{route('admin.categories.index')}}">
+                            <a class="nav-link" id="categories" href="{{route('admin.store.index')}}">
                                 <div class="sb-nav-link-icon"><i class="fas fa-shop"></i></i></div>
                                 Tienda
                             </a>

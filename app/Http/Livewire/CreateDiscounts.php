@@ -16,7 +16,7 @@ class CreateDiscounts extends Component
         'name'         => 'required',
         'code'         => 'required|unique:discounts,code',
         'discount'     => 'required',
-        'type'     => 'required',
+        'type'         => 'required',
     ];
 
     public function save()

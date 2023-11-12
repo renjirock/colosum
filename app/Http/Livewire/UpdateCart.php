@@ -36,6 +36,6 @@ class UpdateCart extends Component
 
     public function render()
     {
-        return view('livewire.update-cart');
+        return view('livewire.cart.update-cart');
     }
 }
